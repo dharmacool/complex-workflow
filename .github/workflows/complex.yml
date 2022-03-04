@@ -6,10 +6,12 @@ jobs:
         steps:
             - run: date
     windows:
+        needs: [ubuntu]
         runs-on: windows-latest
         steps:
          - run: date
     macos:
+        needs: [ubuntu, windows]
         runs-on: macos-latest
         steps:
         - run: date
